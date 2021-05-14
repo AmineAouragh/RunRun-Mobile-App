@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import SplashScreen from './Components/SplashScreen'
+import FirstScreen from './Components/FirstScreen'
 
 export default class App extends Component {
 
@@ -32,23 +33,6 @@ export default class App extends Component {
     if (this.state.isLoading) {
       return <SplashScreen />
     }
-    return (
-      <View style={styles.main_container}>
-        <Text style={styles.text_container}>
-          Welcome To RunRun : Your favorite running mobile app
-        </Text>
-      </View>
-    )
+    return <FirstScreen />
   }
 }
-
-const styles = StyleSheet.create({
-  main_container: {
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  text_container: {
-    fontSize: 20,
-    color: 'orange'
-  }
-})
