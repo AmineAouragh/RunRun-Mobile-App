@@ -6,8 +6,8 @@ export default class FirstScreen extends Component {
         return (
             <View style={styles.main_container}>
               <View style={styles.brand_container}>
-                <Text>--LOGO HERE--</Text>
-                <Text>RunRun</Text>
+                <Text style={{ fontSize: 50, color: 'white' }}>--LOGO HERE--</Text>
+                <Text style={{ fontSize: 40, color: 'white' }}>RunRun</Text>
               </View>
               <View>
                 <Text>--Welcome To RunRun--</Text>
@@ -34,8 +34,10 @@ const styles = StyleSheet.create({
     brand_container: {
         fontWeight: 'bold',
         fontSize: 50,
-        marginBottom: 60,
-        color: '#fb5b5a'
+        marginBottom: 180,
+        color: '#fb5b5a',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     option_btn: {
         width: '80%',
@@ -43,6 +45,6 @@ const styles = StyleSheet.create({
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 35
+        marginTop: 40
     }
 })
