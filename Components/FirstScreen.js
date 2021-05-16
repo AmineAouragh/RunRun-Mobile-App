@@ -1,8 +1,10 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import SignUp from './SignUp'
 
-export default class FirstScreen extends Component {
-    render() {
+export default function FirstScreen({ navigation }) {
         return (
             <View style={styles.main_container}>
               <View style={styles.brand_container}>
@@ -13,7 +15,9 @@ export default class FirstScreen extends Component {
                 <Text>--Welcome To RunRun--</Text>
                 <Text>--Your favorite running mobile app--</Text>
               </View>
-              <TouchableOpacity style={[styles.option_btn, {marginBottom:10, backgroundColor: '#fb5b5a'}]}>
+              <TouchableOpacity 
+                style={[styles.option_btn, {marginBottom:10, backgroundColor: '#fb5b5a'}]}
+                onPress={() => navigation.navigate('Create Account')}>
                 <Text>Create an account</Text>
               </TouchableOpacity>
               <TouchableOpacity style={[styles.option_btn, { backgroundColor: '#fff'}]}>
@@ -21,8 +25,9 @@ export default class FirstScreen extends Component {
               </TouchableOpacity>
             </View>
         )
-    }
 }
+
+
 
 const styles = StyleSheet.create({
     main_container: {
