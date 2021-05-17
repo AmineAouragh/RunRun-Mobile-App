@@ -45,9 +45,8 @@ export default class App extends Component {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Screen-1"
           screenOptions={{
-              headerTitleStyle: {
-                textAlign: 'center'
-              }
+              headerTitleAlign: 'center',
+              headerLeft: null
           }}>
           <Stack.Screen 
              name="Screen-1" 
