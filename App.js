@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import SplashScreen from './Components/SplashScreen'
 import FirstScreen from './Components/FirstScreen'
 import SignUp from './Components/SignUp'
+import SignIn from './Components/SignIn'
 
 
 const Stack = createStackNavigator()
@@ -55,6 +56,10 @@ export default class App extends Component {
           <Stack.Screen 
              name="Create Account" 
              component={SignUp} 
+          />
+          <Stack.Screen 
+             name="Sign in"
+             component={SignIn}
           />
         </Stack.Navigator>
       </NavigationContainer>
