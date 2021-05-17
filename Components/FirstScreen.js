@@ -20,7 +20,9 @@ export default function FirstScreen({ navigation }) {
                 onPress={() => navigation.navigate('Create Account')}>
                 <Text>Create an account</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={[styles.option_btn, { backgroundColor: '#fff'}]}>
+              <TouchableOpacity 
+                style={[styles.option_btn, { backgroundColor: '#fff'}]}
+                onPress={() => navigation.navigate('Sign in')}>
                 <Text>I already have an account</Text>
               </TouchableOpacity>
             </View>
