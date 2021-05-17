@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native' 
+import { SocialIcon } from 'react-native-elements'
 
 export default function SignUp({ navigation }) {
 
@@ -9,7 +10,24 @@ export default function SignUp({ navigation }) {
 
     return (
         <View style={styles.main_container}>
-          <Text>Sign Up Screen</Text>
+          <SocialIcon
+            title='Sign up with Google'
+            button 
+            type='google'
+            style={{ width: '80%' }}
+          />
+          <SocialIcon
+            title='Sign up with Facebook'
+            button 
+            type='facebook'
+            style={{ width: '80%' }}
+          />
+          <SocialIcon
+            title='Sign up with Twitter'
+            button 
+            type='twitter'
+            style={{ width: '80%' }}
+          />
         </View>
     )
 }
