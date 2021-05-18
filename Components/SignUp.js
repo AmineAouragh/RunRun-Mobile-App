@@ -10,37 +10,37 @@ export default function SignUp({ navigation }) {
     const [password, setPassword] = useState('')
 
     return (
-        <View style={styles.main_container}>
+        <View style={[styles.main_container, { marginTop: 20 }]}>
           <View>
             <SocialIcon
               title='Sign up with Google'
               button 
               type='google'
-              style={{ width: '85%' }}
+              style={{ width: '85%',paddingRight: 50 }}
             />
             <SocialIcon
               title='Sign up with Facebook'
               button 
               type='facebook'
-              style={{ width: '85%' }}
+              style={{ width: '85%', paddingRight: 50 }}
             />
             <SocialIcon
               title='Sign up with Twitter'
               button 
               type='twitter'
-              style={{ width: '85%' }}
+              style={{ width: '85%', paddingRight: 50 }}
             />
           </View>
-          <View style={{ flex: 1, justifyContent: 'center' }}>
+          <View style={{ flex: 1, justifyContent: 'center', backgroundColor: 'white', width: '100%' }}>
             <TextInput 
               autoComplete='off'
-              placeholder='Email           '
-              style={{ borderBottomWidth: 1, marginBottom: 20, textAlign: 'left', alignSelf: 'center', fontSize: 25 }}
+              placeholder='Email                                      '
+              style={[ styles.textInput_container, { marginBottom: 60, alignSelf: 'center' }]}
             />
             <TextInput
               secureTextEntry={true}
-              placeholder='Password(min. 8 characters)' 
-              style={{ borderBottomWidth: 1, textAlign: 'left', fontSize: 25 }}
+              placeholder='Password(min. 8 characters)         ' 
+              style={[ styles.textInput_container, { paddingLeft: 10 } ]}
             />
           </View>
         </View>
@@ -52,5 +52,11 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    textInput_container: {
+      borderBottomWidth: 1,
+      borderColor: 'gray',
+      textAlign: 'left',
+      fontSize: 20
     }
 })
