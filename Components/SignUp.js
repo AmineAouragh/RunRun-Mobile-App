@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput } from 'react-native' 
-import { SocialIcon } from 'react-native-elements'
+import { View, Text, StyleSheet, TextInput, Alert } from 'react-native' 
+import { SocialIcon, Button } from 'react-native-elements'
 import { PasswordInputText } from 'react-native-hide-show-password-input'
 
 export default function SignUp({ navigation }) {
@@ -45,16 +45,25 @@ export default function SignUp({ navigation }) {
               style={styles.inputText}
             />
           </View>
+          <View>
+            <Button 
+              title='Sign up with email'
+              disabled
+              buttonStyle={{ width: 250, borderRadius: 15 }}
+              onPress={() => Alert.alert('You should fill your email and password first')}
+              accessibilityLabel="Button for signing up with Email"
+            />
+          </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     main_container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#465881'
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#465881'
     },
     social_icons_container: {
       paddingRight: 50,
@@ -65,7 +74,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'orange',
       borderRadius: 25,
       height: 50,
-      marginBottom: 20,
+      marginBottom: 40,
       justifyContent: 'center',
       padding: 20
     },
