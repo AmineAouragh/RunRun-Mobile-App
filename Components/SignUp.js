@@ -16,19 +16,19 @@ export default function SignUp({ navigation }) {
               title='Sign up with Google'
               button 
               type='google'
-              style={{ width: '85%',paddingRight: 50 }}
+              style={styles.social_icons_container}
             />
             <SocialIcon
               title='Sign up with Facebook'
               button 
               type='facebook'
-              style={{ width: '85%', paddingRight: 50 }}
+              style={styles.social_icons_container}
             />
             <SocialIcon
               title='Sign up with Twitter'
               button 
               type='twitter'
-              style={{ width: '85%', paddingRight: 50 }}
+              style={styles.social_icons_container}
             />
           </View>
           <View style={{ flex: 1, justifyContent: 'center', backgroundColor: 'white', width: '100%' }}>
@@ -52,6 +52,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    social_icons_container: {
+      paddingRight: 50,
+      width: '85%'
     },
     textInput_container: {
       borderBottomWidth: 1,
