@@ -5,9 +5,9 @@ import { PasswordInputText } from 'react-native-hide-show-password-input'
 
 export default function SignUp({ navigation }) {
 
-    const [firstName, setFirstName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [isValid, setIsValid] = useState(false)
 
     return (
         <View style={styles.main_container}>
@@ -34,14 +34,14 @@ export default function SignUp({ navigation }) {
           <View style={styles.inputView}>
             <TextInput 
               autoComplete='off'
-              placeholder='Email                                      '
+              placeholder='Email'
               style={styles.inputText}
             />
           </View>
           <View style={styles.inputView}>
             <TextInput
               secureTextEntry={true}
-              placeholder='Password(min. 8 characters)         ' 
+              placeholder='Password(min. 8 characters)' 
               style={styles.inputText}
             />
           </View>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#465881'
+      backgroundColor: '#246EE9'
     },
     social_icons_container: {
       paddingRight: 50,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     },
     inputView: {
       width: '80%',
-      backgroundColor: 'orange',
+      backgroundColor: '#6B94F3',
       borderRadius: 25,
       height: 50,
       marginBottom: 40,
