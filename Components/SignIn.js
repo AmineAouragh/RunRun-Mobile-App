@@ -1,11 +1,12 @@
 import React from 'react'
-import { View, StyleSheet, Text, TextInput } from 'react-native'
-import { SocialIcon } from 'react-native-elements'
+import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
+import { SocialIcon, Button } from 'react-native-elements'
+import { PasswordInputText } from 'react-native-hide-show-password-input'
 
 export default function SignIn({ navigation }) {
     return ( 
         <View style={styles.main_container}>
-          <View style={{ marginTop: 20 }}>
+          <View style={{ marginTop: 20, marginBottom: 80 }}>
             <SocialIcon
               title='Continue with Google'
               button 
@@ -25,20 +26,62 @@ export default function SignIn({ navigation }) {
               style={styles.social_icons_container}
             />
           </View>
-          <View style={[styles.main_container, { backgroundColor: 'white' }]}>
+          <View style={styles.inputView}>
+            <TextInput 
+              autoComplete='off'
+              placeholder='Email'
+              style={styles.inputText}
+            />
           </View>
+          <View style={styles.inputView}>
+            <TextInput
+              secureTextEntry={true}
+              placeholder='Password' 
+              style={styles.inputText}
+            />
+          </View>
+          <View>
+            <Button 
+              title='Continue'
+              disabled
+              buttonStyle={{ width: 250, borderRadius: 15, marginBottom: 20 }}
+              onPress={() => Alert.alert('You should fill your email and password first')}
+              accessibilityLabel="Button for signing up with Email"
+            />
+          </View>
+          <TouchableOpacity>
+            <Text style={styles.forgot}>Forgot Password?</Text>
+          </TouchableOpacity>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     main_container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#465881'
     },
     social_icons_container: {
       width: '85%',
       paddingRight: 50
+    },
+    inputView: {
+      width: '80%',
+      backgroundColor: 'orange',
+      borderRadius: 25,
+      height: 50,
+      marginBottom: 40,
+      justifyContent: 'center',
+      padding: 20
+    },
+    inputText: {
+      height: 50,
+      color: "white"
+    },
+    forgot:{
+      color: "white",
+      fontSize: 15
     }
 })
