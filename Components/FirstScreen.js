@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -8,7 +8,7 @@ export default function FirstScreen({ navigation }) {
         return (
             <View style={styles.main_container}>
               <View style={styles.brand_container}>
-                <Text style={{ fontSize: 50, color: 'white' }}>--LOGO HERE--</Text>
+                <Image source={require('../logo-app.png')}/>
                 <Text style={{ fontSize: 40, color: 'white' }}>RunRun</Text>
               </View>
               <View>
@@ -34,7 +34,7 @@ export default function FirstScreen({ navigation }) {
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
-        backgroundColor: '#003f5c',
+        backgroundColor: '#246EE9',
         alignItems: 'center',
         justifyContent: 'center'
     },
