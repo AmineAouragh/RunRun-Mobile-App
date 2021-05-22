@@ -8,8 +8,8 @@ export default function FirstScreen({ navigation }) {
         return (
             <View style={styles.main_container}>
               <View style={styles.brand_container}>
-                <Image source={require('../logo-app.png')}/>
-                <Text style={{ fontSize: 40, color: 'white' }}>RunRun</Text>
+                <Image source={require('../logo-runrun.png')} style={{ height: 80, width: 140 }}/>
+                <Text style={{ fontSize: 40, color: 'aqua' }}>RunRun</Text>
               </View>
               <View>
                 <Text>--Welcome To RunRun--</Text>
