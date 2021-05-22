@@ -36,6 +36,8 @@ export default function SignIn({ navigation }) {
               autoComplete='off'
               placeholder='Email'
               style={styles.inputText}
+              value={email}
+              onChangeText={input => setEmail(input)}
             />
           </View>
           <View style={styles.inputView}>
@@ -43,6 +45,8 @@ export default function SignIn({ navigation }) {
               secureTextEntry={true}
               placeholder='Password' 
               style={styles.inputText}
+              value={password}
+              onChangeText={input => setPassword(input)}
             />
           </View>
           <View>
