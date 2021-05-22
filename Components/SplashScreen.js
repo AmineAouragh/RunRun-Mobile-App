@@ -1,26 +1,22 @@
-import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React from 'react'
+import { View, Text, StyleSheet, Image } from 'react-native'
 
-export default class SplashScreen extends Component {
-    render() {
-        return (
-            <View style={styles.view_styles}>
-              <Text style={styles.text_container}>Splash Screen</Text>
-            </View>
-        )
-    }
+export default function SplashScreen() {
+    return (
+        <View style={styles.view_styles}>
+            <Image 
+                source={require('../logo-runrun.png')} 
+                style={{ height: 80, width: 140 }} 
+            />
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
     view_styles: {
         flex: 1,
-        backgroundColor: 'orange',
+        backgroundColor: 'blue',
         alignItems: 'center',
         justifyContent: 'center'
-    },
-    text_container: {
-        color: 'white',
-        fontSize: 40,
-        fontWeight: 'bold'
     }
 })
