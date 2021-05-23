@@ -3,6 +3,12 @@ import { View, Text, StyleSheet, TextInput, Alert } from 'react-native'
 import { SocialIcon, Button } from 'react-native-elements'
 import { PasswordInputText } from 'react-native-hide-show-password-input'
 
+
+const checkEmailRegex = email => {
+  let emailRegex = /^\w+\d+@(gmail|yahoo|protonmail)[.]com$/
+  let check = email.match(emailRegex)
+}
+
 export default function SignUp({ navigation }) {
 
     const [email, setEmail] = useState('')
@@ -47,6 +53,7 @@ export default function SignUp({ navigation }) {
               style={styles.inputText}
               value={password}
               onChangeText={input => setPassword(input)}
+              
             />
           </View>
           <View>
@@ -87,3 +94,5 @@ const styles = StyleSheet.create({
       color: "white"
     }
 })
+
+export default checkEmailRegex
