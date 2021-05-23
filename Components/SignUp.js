@@ -6,7 +6,7 @@ import { PasswordInputText } from 'react-native-hide-show-password-input'
 
 const checkEmailRegex = email => {
   let emailRegex = /^\w+\d+@(gmail|yahoo|protonmail)[.]com$/
-  let check = email.match(emailRegex)
+  return email.match(emailRegex)
 }
 
 export default function SignUp({ navigation }) {
