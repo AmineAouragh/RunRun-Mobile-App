@@ -46,11 +46,15 @@ export default class App extends Component {
         <Stack.Navigator initialRouteName="Screen-1"
           screenOptions={{
               headerTitleAlign: 'center',
-              headerLeft: null
+              headerLeft: null,
+              fontSize: 40
           }}>
           <Stack.Screen 
-             name="Screen-1" 
-             component={FirstScreen} 
+             name="Screen-1"
+             component={FirstScreen}
+             options={{
+               headerShown: false
+             }}
           />
           <Stack.Screen 
              name="Create Account" 
