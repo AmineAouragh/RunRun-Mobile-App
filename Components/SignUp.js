@@ -15,7 +15,7 @@ const showToast = () => {
     "Toast Test",
     ToastAndroid.LONG,
     ToastAndroid.BOTTOM,
-    25,
+    10,
     50
   )
 }
@@ -70,9 +70,8 @@ export default function SignUp({ navigation }) {
           <View>
             <Button 
               title='Sign up with email'
-              disabled
               buttonStyle={{ width: 250, borderRadius: 15 }}
-              onPress={() => {Alert.alert('You should fill your email and password first')}}
+              onPress={() => showToast()}
               accessibilityLabel="Button for signing up with Email"
             />
           </View>
