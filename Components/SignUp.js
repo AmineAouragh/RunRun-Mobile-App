@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, Alert } from 'react-native' 
+import { ToastAndroid } from 'react-native'
 import { SocialIcon, Button } from 'react-native-elements'
 import { PasswordInputText } from 'react-native-hide-show-password-input'
 
@@ -7,6 +8,16 @@ import { PasswordInputText } from 'react-native-hide-show-password-input'
 const checkEmailRegex = email => {
   let emailRegex = /^\w+\d+@(gmail|yahoo|protonmail)[.]com$/
   return email.match(emailRegex)
+}
+
+const showToast = () => {
+  ToastAndroid.showWithGravityAndOffset(
+    "Toast Test",
+    ToastAndroid.LONG,
+    ToastAndroid.BOTTOM,
+    25,
+    50
+  )
 }
 
 export default function SignUp({ navigation }) {
@@ -61,7 +72,7 @@ export default function SignUp({ navigation }) {
               title='Sign up with email'
               disabled
               buttonStyle={{ width: 250, borderRadius: 15 }}
-              onPress={() => Alert.alert('You should fill your email and password first')}
+              onPress={() => {Alert.alert('You should fill your email and password first')}}
               accessibilityLabel="Button for signing up with Email"
             />
           </View>
@@ -95,4 +106,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default checkEmailRegex
+export { checkEmailRegex }
