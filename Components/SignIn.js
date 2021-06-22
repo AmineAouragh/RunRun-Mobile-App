@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
 import { SocialIcon, Button } from 'react-native-elements'
 import { PasswordInputText } from 'react-native-hide-show-password-input'
+import auth from 'react-native-firebase/auth'
+import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin'
 
 export default function SignIn({ navigation }) {
 
