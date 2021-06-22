@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TextInput, Alert } from 'react-native' 
 import { ToastAndroid } from 'react-native'
 import { SocialIcon, Button } from 'react-native-elements'
-import { PasswordInputText } from 'react-native-hide-show-password-input'
-
+import PasswordInputText from 'react-native-hide-show-password-input'
 
 const checkEmailRegex = email => {
   let emailRegex = /^\w+\d+@(gmail|yahoo|protonmail)[.]com$/
@@ -13,7 +12,7 @@ const checkEmailRegex = email => {
 const showToast = () => {
   ToastAndroid.showWithGravityAndOffset(
     "Toast Test",
-    ToastAndroid.LONG,
+    ToastAndroid.SHORT,
     ToastAndroid.BOTTOM,
     10,
     50
@@ -59,12 +58,10 @@ export default function SignUp({ navigation }) {
           </View>
           <View style={styles.inputView}>
             <TextInput
-              secureTextEntry={true}
-              placeholder='Password(min. 8 characters)' 
+              placeholder='Password'
               style={styles.inputText}
               value={password}
-              onChangeText={input => setPassword(input)}
-              
+              onChangeText={input => setPassword(input)}           
             />
           </View>
           <View>
@@ -100,7 +97,7 @@ const styles = StyleSheet.create({
       padding: 20
     },
     inputText: {
-      height: 50,
+      height: 60,
       color: "white"
     }
 })
