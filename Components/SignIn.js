@@ -18,18 +18,25 @@ export default function SignIn({ navigation }) {
         const {accessToken, idToken} = await GoogleSignin.signIn();
         setloggedIn(true);
       } catch (error) {
-        if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-          // user cancelled the login flow
-          alert('Cancel');
-        } else if (error.code === statusCodes.IN_PROGRESS) {
-          alert('Signin in progress');
-          // operation (f.e. sign in) is in progress already
-        } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-          alert('PLAY_SERVICES_NOT_AVAILABLE');
-          // play services not available or outdated
-        } else {
-          // some other error happened
+
+        switch(error.code) {
+          case statusCodes.SIGN_IN_CANCELLED:
+            alert('Cancel')
+            break
+
+          case statusCodes.IN_PROGRESS:
+            alert('Signin in progress')
+            break
+
+          case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
+            alert('PLAY_SERVICES_NOT_AVAILABLE')
+            break
+
+          default:
+            // some other error happened
+            break
         }
+
       }
     };
 
