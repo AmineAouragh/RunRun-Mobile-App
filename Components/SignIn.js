@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
 import { SocialIcon, Button } from 'react-native-elements'
 import { PasswordInputText } from 'react-native-hide-show-password-input'
@@ -11,6 +11,7 @@ export default function SignIn({ navigation }) {
     const [password, setPassword] = useState('')
     const [isValid, setIsValid] = useState(false)
     const [loggedIn, setloggedIn] = useState(false)
+    const [userInfo, setuserInfo] = useState([])
 
     _signIn = async () => {
       try {
@@ -39,6 +40,25 @@ export default function SignIn({ navigation }) {
 
       }
     };
+
+    useEffect(() => {
+      GoogleSignin.configure({
+        scopes: ['email'],
+        webClientId: '855927394870-4v7o511rbt1guv68hfcejetpf9tgiipd.apps.googleusercontent.com',
+        offlineAccess: true
+      })
+    }, [])
+
+    signOut = async() => {
+      try {
+        await GoogleSignin.revokeAccess()
+        await GoogleSignin.signOut()
+        setloggedIn(false)
+        setuserInfo([])
+      } catch(error) {
+        console.error(error)
+      }
+    }
 
     return ( 
         <View style={styles.main_container}>
